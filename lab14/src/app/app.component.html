@@ -1,0 +1,26 @@
+<div class="container">
+  <h3>Фильтры</h3>
+  <div class="row mb-1">
+    <div class="col-3">
+      <button class="btn btn-dark btn-block" (click)="searchByFN()">Имя</button>
+    </div>
+    <div class="col-3">
+      <input type="text" [(ngModel)]="srchFN" class="form-control" *ngIf="fnFilter">
+    </div>
+    <div class="col-3">
+      <button class="btn btn-dark btn-block" (click)="searchByLN()">Фамилия</button>
+    </div>
+    <div class="col-3">
+      <input type="text" [(ngModel)]="srchLN" class="form-control" *ngIf="lNFilter">
+    </div>
+  </div>
+</div>
+
+
+<app-person-view (delPerson)="onDeletePerson($event)"
+                 (editPerson)="onEditPerson($event)"
+                 [inPerson]="person"
+                 *ngFor="let person of persons | appFirstNameFilter:srchFN | appLastNameFilter:srchLN">
+</app-person-view>
+<hr>
+<app-person-add (addperson)="onAddPerson($event)"></app-person-add>
