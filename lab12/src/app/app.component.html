@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row">
+      <h2>{{title}}</h2>
+    </div>
+  </div>
+  
+<app-person-view (deleteperson)="onDeletePerson($event)"
+                 (editperson)="onEditPerson($event)"
+                 [inPerson]="person"
+                 *ngFor="let person of persons">
+</app-person-view>
+<hr>
+<app-person-add (addperson)="onAddPerson($event)"></app-person-add>

@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6 mt-2">
+      <input type="text" class="form-control" placeholder="Имя" #inputFirstname>
+    </div>
+    <div class="col-6 mt-2">
+
+      <input type="text" class="form-control" placeholder="Фамилия" #inputLastname>
+    </div>
+    <div class="col-12 mt-2">
+      <button class="btn btn-primary" (click)="onAddPerson(inputFirstname.value, inputLastname.value)">Добавить</button>
+    </div>
+  </div>
+</div>
