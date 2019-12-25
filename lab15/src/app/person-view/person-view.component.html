@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-2 pt-2">{{inPerson.id}}
+  </div>
+  <div class="col-3 pt-2">{{inPerson.firstname}}
+  </div>
+  <div class="col-3 pt-2">{{inPerson.lastname}}
+  </div>
+  <div class="col-2 pt-2">{{inPerson.phone | appPhone}}
+  </div>
+  <div class="col-2">
+    <div class="btn-group m-1">
+      <a [routerLink]="['/edit', inPerson.id]">
+        <button class="btn btn-primary">Редактировать</button>
+      </a>
+      <button class="btn btn-danger" (click)="onDeletePerson()">Удалить</button>
+    </div>
+  </div>
+
+</div>
+

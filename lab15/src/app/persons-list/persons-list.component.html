@@ -1,0 +1,7 @@
+<div class="container">
+    <app-person-view (delPerson)="personService.onDeletePerson($event)"
+                     *ngFor="let person of personService.persons"
+                     [inPerson]="person">
+    </app-person-view>
+
+</div>
