@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-6 col-lg-3 mb-2" *ngFor="let sensor of sensors, let s_index = index">
+      <div class="card" [ngClass]="{'bg-info': sensor.status, 'bg-danger': sensor.status === false}">
+        <div class="card card-header">
+        <h5>{{sensor.id}}</h5>
+      </div>
+      <div class="card card-body">
+        <p>{{sensor.name}}</p>
+
+        <button class="btn btn-warning" (click)="onDeleteSensor(s_index)">Удалить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <!--Форма добавления датчика-->
+
+    <div class="col-sm-3 col-md-12 col-lg-12 mb-2">
+      <div class="card">
+        <div class="card card-header">
+          <h5>Добавление нового датчика</h5>
+        </div>
+        <div class="card card-body">
+            <input type="text" placeholder="Имя датчика" [(ngModel)]="sName" />
+            <div class="form-group form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1" [(ngModel)]="sStatus">
+              <label class="form-check-label" for="exampleCheck1">Статус</label>
+            </div>
+            <button class="btn btn-success" (click)="onAddSensor()">Добавить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
